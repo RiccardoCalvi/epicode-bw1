@@ -31,8 +31,11 @@
         let livello = "easy";
         let domande = [];
         let titolo = document.getElementById("titolo_domanda");
-        let is_boolean = false;
         let completa = true;
+        let pulsante_1 = document.getElementById("risposta_1");
+        let pulsante_2 = document.getElementById("risposta_2");
+        let pulsante_3 = document.getElementById("risposta_3");
+        let pulsante_4 = document.getElementById("risposta_4");
 
         fetch(
           `https://opentdb.com/api.php?amount=${quantita}&category=18&difficulty=${livello}`
@@ -57,12 +60,11 @@
               // console.log(is_boolean)
               switch (domanda.type) {
                 case "boolean":
-                  is_boolean = true;
-                  domanda_bool(risposte);
+                  pulsanti_risposte(risposte, true);
                   break;
-
-                case "multiple":
-                  is_boolean = false;
+                  
+                  case "multiple":
+                    pulsanti_risposte(risposte, false);
                   break;
 
                 default:
@@ -70,16 +72,22 @@
               }
             }
 
-            function domanda_bool(risposte) {
-              let pulsante_1 = document.getElementById("risposta_1");
-              let pulsante_2 = document.getElementById("risposta_2");
-              let pulsante_3 = document.getElementById("risposta_3");
-              let pulsante_4 = document.getElementById("risposta_4");
+            function pulsanti_risposte(risposte, is_boolean) {
+                if (is_boolean) {
+                    pulsante_1.innerHTML = risposte[0];
+                    pulsante_2.innerHTML = risposte[1];
+                    pulsante_3.classList.add("nascondi");
+                    pulsante_4.classList.add("nascondi");
+                } else {
+                    pulsante_1.innerHTML = risposte[0];
+                    pulsante_2.innerHTML = risposte[1];
+                    pulsante_3.innerHTML = risposte[2];
+                    pulsante_4.innerHTML = risposte[3];
+                    pulsante_3.classList.remove("nascondi");
+                    pulsante_4.classList.remove("nascondi");
 
-              pulsante_1.innerHTML = risposte[0];
-              pulsante_2.innerHTML = risposte[1];
-              pulsante_3.classList.add("nascondi");
-              pulsante_4.classList.add("nascondi");
+                }
+
             }
 
             function shuffle(array) {
