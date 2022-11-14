@@ -16,9 +16,11 @@
       <div>
         <h1 id="titolo_domanda">How can I create</h1>
       </div>
-      <div>
-        <button>Question1</button>
-
+      <div style="height: 300px;">
+        <button id="risposta_1">Question1</button>
+        <button id="risposta_2">Question1</button>
+        <button id="risposta_3">Question1</button>
+        <button id="risposta_4">Question1</button>
       </div>
       <div>
         <p>Question</p>
@@ -30,6 +32,7 @@
         let domande = [];
         let titolo = document.getElementById("titolo_domanda");
         let is_boolean = false;
+        let completa = true;
         // console.log(is_boolean)
 
         fetch(
@@ -38,21 +41,34 @@
           .then((response) => response.json())
           .then((domande) => {
             domande = domande.results;
-            console.log(domande);
-            titolo.innerHTML = domande[0].question;
+            // console.log(domande);
 
-            switch (domande.type) {
-              case "boolean":
-                is_boolean = true;
-                break;
+            for (let i = 0; i < domande.length; i++) {
+                const domanda = domande[i];
+                console.log(domanda)
+                titolo.innerHTML = domanda.question;
+                switch (domanda.type) {
+                  case "boolean":
+                    is_boolean = true;
+                    break;
+    
+                  case "multiple":
+                    is_boolean = false;
+                    break;
 
-              case "multiple":
-                is_boolean = false;
-                break;
+                  default:
+                    break;
+                }
 
-              default:
-                break;
+
+
+                console.log(is_boolean)
+
             }
+            
+
+
+
           });
       </script>
     </main>
