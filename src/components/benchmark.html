@@ -14,6 +14,9 @@
     </header>
     <main>
       <div>
+        <p id="timer">tempo</p>
+      </div>
+      <div>
         <h1 id="titolo_domanda">How can I create</h1>
       </div>
       <div style="height: 300px">
@@ -30,8 +33,9 @@
         let quantita = 10;
         let livello = "easy";
         let domande = [];
-        let titolo = document.getElementById("titolo_domanda");
         let completa = true;
+        let titolo = document.getElementById("titolo_domanda");
+        let timer = document.getElementById("timer");
         let pulsante_1 = document.getElementById("risposta_1");
         let pulsante_2 = document.getElementById("risposta_2");
         let pulsante_3 = document.getElementById("risposta_3");
@@ -42,52 +46,54 @@
         )
           .then((response) => response.json())
           .then((domande) => {
-            domande = domande.results;
-            // console.log(domande);
+            getFetch(domande.results);
+            // console.log(domande.results);
 
-            for (let i = 0; i < domande.length; i++) {
-              const domanda = domande[i];
-              let risposte = [];
-              // console.log(domanda)
-              titolo.innerHTML = domanda.question;
-              risposte.push(domanda.correct_answer);
-              for (const risposta of domanda.incorrect_answers) {
-                risposte.push(risposta);
-              }
-              console.log(risposte);
-              shuffle(risposte);
+            // Raccolto tutto il codice fatto finora in una funzione
+            function getFetch(domande) {
+              for (let i = 0; i < domande.length; i++) {
+                const domanda = domande[i];
+                let risposte = [];
 
-              // console.log(is_boolean)
-              switch (domanda.type) {
-                case "boolean":
-                  pulsanti_risposte(risposte, true);
-                  break;
-                  
-                  case "multiple":
-                    pulsanti_risposte(risposte, false);
-                  break;
+                // console.log(domanda); // DEBUG => Completo dell'oggetto della domanda
 
-                default:
-                  break;
+                // Sostituisce il testo dell'H1 con il titolo della domanda presa dal fetch
+                titolo.innerHTML = domanda.question;
+
+                // Aggiunge al vettore "risposte" la risposta corretta
+                risposte.push(domanda.correct_answer);
+
+                // Aggiunge al vettore "risposte" le risposte Errate
+                for (const risposta of domanda.incorrect_answers) {
+                  risposte.push(risposta);
+                }
+
+                // console.log(risposte); // DEBUG => Vettore con risposte
+
+                // Mescola tutti gli elementi del vettore
+                shuffle(risposte);
+
+                // Controlla il tipo di domanda se boleana o multipla
+                domanda.type == "boolean"
+                  ? pulsanti_risposte(risposte, true)
+                  : pulsanti_risposte(risposte, false);
               }
             }
 
             function pulsanti_risposte(risposte, is_boolean) {
-                if (is_boolean) {
-                    pulsante_1.innerHTML = risposte[0];
-                    pulsante_2.innerHTML = risposte[1];
-                    pulsante_3.classList.add("nascondi");
-                    pulsante_4.classList.add("nascondi");
-                } else {
-                    pulsante_1.innerHTML = risposte[0];
-                    pulsante_2.innerHTML = risposte[1];
-                    pulsante_3.innerHTML = risposte[2];
-                    pulsante_4.innerHTML = risposte[3];
-                    pulsante_3.classList.remove("nascondi");
-                    pulsante_4.classList.remove("nascondi");
-
-                }
-
+              if (is_boolean) {
+                pulsante_1.innerHTML = risposte[0];
+                pulsante_2.innerHTML = risposte[1];
+                pulsante_3.classList.add("nascondi");
+                pulsante_4.classList.add("nascondi");
+              } else {
+                pulsante_1.innerHTML = risposte[0];
+                pulsante_2.innerHTML = risposte[1];
+                pulsante_3.innerHTML = risposte[2];
+                pulsante_4.innerHTML = risposte[3];
+                pulsante_3.classList.remove("nascondi");
+                pulsante_4.classList.remove("nascondi");
+              }
             }
 
             function shuffle(array) {
