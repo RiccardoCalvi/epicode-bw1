@@ -14,13 +14,11 @@
     </header>
     <main>
       <div>
-        <h1>How can I create</h1>
+        <h1 id="titolo_domanda">How can I create</h1>
       </div>
       <div>
         <button>Question1</button>
-        <button>Question2</button>
-        <button>Question3</button>
-        <button>Question4</button>
+
       </div>
       <div>
         <p>Question</p>
@@ -30,6 +28,9 @@
         let quantita = 10;
         let livello = "easy";
         let domande = [];
+        let titolo = document.getElementById("titolo_domanda");
+        let is_boolean = false;
+        // console.log(is_boolean)
 
         fetch(
           `https://opentdb.com/api.php?amount=${quantita}&category=18&difficulty=${livello}`
@@ -38,6 +39,20 @@
           .then((domande) => {
             domande = domande.results;
             console.log(domande);
+            titolo.innerHTML = domande[0].question;
+
+            switch (domande.type) {
+              case "boolean":
+                is_boolean = true;
+                break;
+
+              case "multiple":
+                is_boolean = false;
+                break;
+
+              default:
+                break;
+            }
           });
       </script>
     </main>
