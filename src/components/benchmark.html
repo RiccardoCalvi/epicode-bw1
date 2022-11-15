@@ -16,7 +16,7 @@
     </header>
     <main>
       <div>
-        <p id="timer">tempo</p>
+        <div>Registration closes in <span id="time">05:00</span> minutes!</div>
       </div>
       <div id="div1"></div>
       <div>
@@ -33,7 +33,7 @@
       </div>
 
       <script>
-        let quantita = 15;
+        let quantita = 3;
         let livello = "easy";
         let domande = [];
         let completa = true;
@@ -53,39 +53,45 @@
           .then((response) => response.json())
           .then((domande) => {
             domande = domande.results;
+            let i = 0
+            let esci = false
 
-
-
-            question.innerHTML = `Question ${i+1}/${domande.length}`
-
-            // console.log(elemento);
-
-            let i = 0;
+            // AVVIA IL TIMER DI TOT SECONDI
             for (let y = 0; y < domande.length; y++) {
+              // console.log(domande.length)
               const runTimer = () => {
                 timerId = window.setTimeout(() => {
-                  avviaTimer()
-                  i++
-                }, y * 10000);
+                  avvia_costruttore();
+                  // i++
+
+                }, y * 3000);
               };
               runTimer();
+              function avvia_costruttore() {
+              costruisci(domande[i]);
+              question.innerHTML = `Question ${i + 1}/${domande.length}`;
+                i++;
+                console.log(i);
+              }
+              
             }
 
-            function avviaTimer() {
-              timer = window.setTimeout(() => {
-                costruisci(domande[i]);
-              }, 0);
-            }
-
-            // }
+            
 
             function controllaRisposte(risposta, domanda) {
               i++;
-              avviaTimer();
+              avvia_costruttore();
               if (risposta.innerHTML == domanda.correct_answer) {
                 punteggio++;
                 console.log(punteggio);
               }
+              if (i == domande.length){
+                  console.log("CIAO")
+                }
+            }
+
+            function exit() {
+              window.location.replace("results.html");
             }
 
             function costruisci(elemento) {
