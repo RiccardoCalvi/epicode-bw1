@@ -79,8 +79,18 @@
                 domanda.type == "boolean"
                   ? pulsanti_risposte(risposte, true)
                   : pulsanti_risposte(risposte, false);
+
+                }
+                pulsante_1.addEventListener('click', controllaRisposte)
               }
-            }
+              
+              function controllaRisposte(risposta,domanda){
+              console.log('ciao')
+              }
+            
+
+
+
 
             function pulsanti_risposte(risposte, is_boolean) {
               if (is_boolean) {
