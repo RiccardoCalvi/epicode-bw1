@@ -29,11 +29,11 @@
         <button id="risposta_4">Question4</button>
       </div>
       <div>
-        <p>Question</p>
+        <p id="question">Question</p>
       </div>
 
       <script>
-        let quantita = 10;
+        let quantita = 15;
         let livello = "easy";
         let domande = [];
         let completa = true;
@@ -43,6 +43,7 @@
         let pulsante_2 = document.getElementById("risposta_2");
         let pulsante_3 = document.getElementById("risposta_3");
         let pulsante_4 = document.getElementById("risposta_4");
+        let question = document.getElementById("question");
         let punteggio = 0;
         var timerId = 0;
 
@@ -53,31 +54,38 @@
           .then((domande) => {
             domande = domande.results;
 
-            for (let i = 0; i < domande.length; i++) {
-              const elemento = domande[i];
-
-              console.log(elemento);
 
 
-                const runTimer = () => {
-                  timerId = window.setTimeout(() => {
-                    costruisci(elemento)
-                    
-                  }, i * 5000);
-                };
-              
+            question.innerHTML = `Question ${i+1}/${domande.length}`
 
+            // console.log(elemento);
+
+            let i = 0;
+            for (let y = 0; y < domande.length; y++) {
+              const runTimer = () => {
+                timerId = window.setTimeout(() => {
+                  avviaTimer()
+                  i++
+                }, y * 10000);
+              };
               runTimer();
-
             }
-            
+
+            function avviaTimer() {
+              timer = window.setTimeout(() => {
+                costruisci(domande[i]);
+              }, 0);
+            }
+
+            // }
+
             function controllaRisposte(risposta, domanda) {
-              window.clearInterval(timerId);
-              runTimer();
-              // if (risposta.innerHTML == domanda.correct_answer) {
-              //   punteggio++;
-              //   console.log(punteggio);
-              // }
+              i++;
+              avviaTimer();
+              if (risposta.innerHTML == domanda.correct_answer) {
+                punteggio++;
+                console.log(punteggio);
+              }
             }
 
             function costruisci(elemento) {
