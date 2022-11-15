@@ -53,8 +53,8 @@
           .then((response) => response.json())
           .then((domande) => {
             domande = domande.results;
-            let i = 0
-            let esci = false
+            let i = 0;
+            let esci = false;
 
             // AVVIA IL TIMER DI TOT SECONDI
             for (let y = 0; y < domande.length; y++) {
@@ -63,31 +63,25 @@
                 timerId = window.setTimeout(() => {
                   avvia_costruttore();
                   // i++
-
                 }, y * 3000);
               };
               runTimer();
+
               function avvia_costruttore() {
-              costruisci(domande[i]);
-              question.innerHTML = `Question ${i + 1}/${domande.length}`;
+                costruisci(domande[i]);
+                question.innerHTML = `Question ${i + 1}/${domande.length}`;
                 i++;
                 console.log(i);
               }
-              
             }
 
-            
-
             function controllaRisposte(risposta, domanda) {
-              i++;
+
               avvia_costruttore();
               if (risposta.innerHTML == domanda.correct_answer) {
                 punteggio++;
                 console.log(punteggio);
               }
-              if (i == domande.length){
-                  console.log("CIAO")
-                }
             }
 
             function exit() {
