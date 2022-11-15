@@ -1,3 +1,7 @@
 .nascondi {
     display: none;
 }
+
+.doughnut{
+    z-index: 1;            /*per ricordarci la sovrapposizione con la scritta*/
+}
