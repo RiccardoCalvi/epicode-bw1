@@ -56,7 +56,6 @@ fetch(
           i++;
           avviaTimer();
           costruisci(domande[i]);
-
         }
         timer--;
         checkPulsanti();
@@ -64,9 +63,11 @@ fetch(
     }
 
     function controllaRisposte(risposta, domanda) {
-      let value = risposta.innerHTML;
-      if (value == domanda.correct_answer) {
+      if (risposta.innerHTML == domanda.correct_answer) {
+        corrette_utente.push(risposta.innerHTML);
         punteggio++;
+      } else {
+        errate_utente.push(risposta.innerHTML);
       }
 
       if (i >= domande.length) {
@@ -103,6 +104,9 @@ fetch(
     }
 
     function costruisci(elemento) {
+      document.getElementById("question").innerHTML = `Question ${i + 1}/${
+        domande.length
+      }`;
       let risposte = [];
 
       titolo.innerHTML = elemento.question;
@@ -152,5 +156,4 @@ fetch(
         .getElementById("base-timer-path-remaining")
         .setAttribute("stroke-dasharray", circleDasharray);
     }
-
   });
