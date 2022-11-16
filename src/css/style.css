@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600&family=Outfit:wght@200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;800&family=Outfit:wght@200;300;400;500;600;800&display=swap");
 
 /* font-family: 'Inter', sans-serif;
 font-family: 'Outfit', sans-serif; */
@@ -47,10 +47,10 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 30px;
   color: #d20094;
   font-family: "Inter", sans-serif;
-  margin: 25px 0;
+  margin: 35px 0px 10px 0px;
 }
 
 .primo {
@@ -60,11 +60,13 @@ h2 {
 
 ul {
   color: white;
-  /* max-width: 580px;
-  margin-top: 40px; */
+  /* max-width: 580px;*/
+  margin-top: 40px; 
 }
 li {
-  margin: 5px;
+  margin: 10px;
+  margin-left: 25px;
+  list-style: disc;
 }
 
 input {
@@ -76,6 +78,8 @@ input {
   appearance: none;
   width: 20px;
   height: 20px;
+  vertical-align: middle;
+  
 }
 #form input[type="checkbox"]:checked {
   background-color: white;
@@ -86,6 +90,9 @@ input {
 #form label {
   display: inline;
   color: white;
+  vertical-align: middle;
+  margin-left: 10px
+  ;
 }
 
 #container_pulsanti input[type="button"],
@@ -95,6 +102,7 @@ input {
   padding: 20px 60px;
   width: 300px;
   background-color: #00fff0;
+  vertical-align: middle;
 }
 input[value] {
   font-size: 1.2rem;
@@ -287,6 +295,6 @@ div#timercontainer {
   color: #d20094;
 }
 
-b {
-  font-weight: 600;
+b{
+  font-weight: 800;
 }
