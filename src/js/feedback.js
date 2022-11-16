@@ -1,13 +1,13 @@
 function change(array) {
   array.forEach((stellina) => {
     var stella = document.getElementById(stellina);
-    stella.setAttribute("name", "star");
+    stella.classList.add("piena");
   });
 }
 
 function changeRest(array) {
   array.forEach((stellina) => {
     var stella = document.getElementById(stellina);
-    stella.setAttribute("name", "star-outline");
+    stella.classList.remove("piena");
   });
 }

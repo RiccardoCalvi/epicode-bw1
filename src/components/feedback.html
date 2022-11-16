@@ -19,43 +19,40 @@
         </div>
     </header>
 
-    <main>
-        <div>
+    <main id="feedback">
+        <div class="centra">
             <h1>Tell us how it's going</h1>
-            <h2>
-                From 0 to 10,how likely are you to recommend epicode to a friend or a
-                colleague?
-            </h2>
+            <p>From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</p>
         </div>
 
-        <div>
-            <ion-icon class="stellina" name="star-outline" id="1"
+        <div class="centra">
+            <ion-icon class="stella" name="star" id="1"
                 onclick="change(['1']), changeRest(['2','3','4','5','6','7','8','9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="2"
+            <ion-icon class="stella" name="star" id="2"
                 onclick="change(['1','2']), changeRest(['3','4','5','6','7','8','9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="3"
+            <ion-icon class="stella" name="star" id="3"
                 onclick="change(['1','2','3']), changeRest(['4','5','6','7','8','9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="4"
+            <ion-icon class="stella" name="star" id="4"
                 onclick="change(['1','2','3','4']), changeRest(['5','6','7','8','9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="5"
+            <ion-icon class="stella" name="star" id="5"
                 onclick="change(['1','2','3','4','5']), changeRest(['6','7','8','9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="6"
+            <ion-icon class="stella" name="star" id="6"
                 onclick="change(['1','2','3','4','5','6']), changeRest(['7','8','9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="7"
+            <ion-icon class="stella" name="star" id="7"
                 onclick="change(['1','2','3','4','5','6','7']), changeRest(['8','9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="8"
+            <ion-icon class="stella" name="star" id="8"
                 onclick="change(['1','2','3','4','5','6','7','8']), changeRest(['9','10'])"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="9"
+            <ion-icon class="stella" name="star" id="9"
                 onclick="change(['1','2','3','4','5','6','7','8','9'], changeRest(['10']))"></ion-icon>
-            <ion-icon class="stellina" name="star-outline" id="10"
+            <ion-icon class="stella" name="star" id="10"
                 onclick="change(['1','2','3','4','5','6','7','8','9','10'])"></ion-icon>
         </div>
 
-        <div>
+        <div id="form" class="centra">
             <p>Leave us an open feedback about your experience so far</p>
             <form action="">
                 <input type="text" placeholder="Write your comment here" />
-                <button type="submit">More info</button>
+                <input type="button" value="More info">
             </form>
         </div>
     </main>

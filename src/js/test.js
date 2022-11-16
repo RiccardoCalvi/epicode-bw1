@@ -53,11 +53,11 @@ fetch(
           costruisci(domande[i]);
           question.innerHTML = `Question ${i + 1}/${domande.length}`;
           i++;
-          timerG();
+          // timerG();
 
           console.log(i);
         } else {
-          exit();
+          // exit();
         }
       }
     }
