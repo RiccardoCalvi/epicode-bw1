@@ -23,7 +23,7 @@ fetch(
     for (let y = 0; y <= domande.length; y++) {
       // console.log(domande.length)
       const runTimer = () => {
-        timerId = window.setTimeout(() => {
+        window.setTimeout(() => {
           avvia_costruttore();
         }, y * 11000);
       };
@@ -57,6 +57,8 @@ fetch(
 
     function exit() {
       window.location.replace("results.html");
+      localStorage.setItem("punteggio",punteggio);
+      localStorage.setItem("domande",quantita);
     }
 
     function costruisci(elemento) {
@@ -134,4 +136,5 @@ fetch(
 
       return array;
     }
+
   });
