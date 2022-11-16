@@ -46,7 +46,7 @@ fetch(
 
     function avviaTimer() {
       interval = setInterval(function () {
-        document.getElementById("count").innerHTML = timer;
+        document.getElementById("timer").innerHTML = timer;
 
         if (i >= domande.length) exit();
 
@@ -56,7 +56,7 @@ fetch(
           i++;
           avviaTimer();
           costruisci(domande[i]);
-          // or...
+
         }
         timer--;
         checkPulsanti();
@@ -143,4 +143,14 @@ fetch(
       }
       return array;
     }
+
+    function setCircleDasharray() {
+      const circleDasharray = `${(
+        calculateTimeFraction() * FULL_DASH_ARRAY
+      ).toFixed(0)} 283`;
+      document
+        .getElementById("base-timer-path-remaining")
+        .setAttribute("stroke-dasharray", circleDasharray);
+    }
+
   });

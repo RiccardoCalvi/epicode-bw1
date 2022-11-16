@@ -255,10 +255,25 @@ input[value] {
   color: white;
 }
 
-
-#feedback #form input[type="button"]{
+#feedback #form input[type="button"] {
   display: block;
   margin: 0 auto;
   width: auto;
   padding: 15px 40px;
+}
+
+div#timercontainer{
+  display: block;
+  margin-top: -120px;
+  text-transform: uppercase;
+  float: right;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  width: 80px;
+}
+
+#timercontainer #timer {
+  text-align: center;
+  font-size: 3rem;
 }
