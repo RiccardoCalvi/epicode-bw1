@@ -17,7 +17,6 @@ fetch(
   .then((domande) => {
     domande = domande.results;
     let i = 0;
-    let esci = false;
 
     // AVVIA IL TIMER DI TOT SECONDI
     for (let y = 0; y <= domande.length; y++) {
@@ -34,12 +33,11 @@ fetch(
           costruisci(domande[i]);
           question.innerHTML = `Question ${i + 1}/${domande.length}`;
           i++;
-            timerG();
+          timerG();
 
           console.log(i);
         } else {
-            exit();
-        //   console.log("ESCI");
+          exit();
         }
       }
     }
@@ -57,8 +55,8 @@ fetch(
 
     function exit() {
       window.location.replace("results.html");
-      localStorage.setItem("punteggio",punteggio);
-      localStorage.setItem("domande",quantita);
+      localStorage.setItem("punteggio", punteggio);
+      localStorage.setItem("domande", quantita);
     }
 
     function costruisci(elemento) {
@@ -136,5 +134,4 @@ fetch(
 
       return array;
     }
-
   });
