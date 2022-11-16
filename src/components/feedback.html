@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Feedback - Epicode</title>
 </head>
 <body>
@@ -25,9 +27,18 @@
             <h1>Tell us how it's going</h1>
             <h2>From 0 to 10,how likely are you to recommend epicode to a friend or a colleague?</h2>
         </div>
-
+        
         <div>
-            <img src="../img/star.svg">
+        <ion-icon class="stellina" name="star-outline" id="1" onclick="change(['1'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline"class="stellina" id="2" onclick="change(['1','2'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="3" onclick="change(['1','2','3'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="4" onclick="change(['1','2','3','4'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="5" onclick="change(['1','2','3','4','5'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="6" onclick="change(['1','2','3','4','5','6'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="7" onclick="change(['1','2','3','4','5','6','7'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="8" onclick="change(['1','2','3','4','5','6','7','8'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="9" onclick="change(['1','2','3','4','5','6','7','8','9'])"></ion-icon>
+        <ion-icon class="stellina" name="star-outline" id="10" onclick="change(['1','2','3','4','5','6','7','8','9','10'])"></ion-icon>
         </div>
 
         <div>
@@ -38,5 +49,18 @@
             </form>
         </div>
     </main>
+
+    <script>
+
+    function change(array)
+    {
+        array.forEach(stellina => {
+            
+            var image1 = document.getElementById(stellina);
+            image1.setAttribute("name","star")
+
+        });
+    }
+    </script>
 </body>
 </html>
