@@ -1,36 +1,30 @@
-let domande = localStorage.getItem("domande");
-let corrette = localStorage.getItem("punteggio");
-// let domande = 10;
-// let corrette = 5;
+// let domande = localStorage.getItem("domande");
+// let corrette = localStorage.getItem("punteggio");
+
+// FOR DEBUG
+let domande = 10;
+let corrette = 6;
+
 let errate = domande - corrette;
-
-console.log(corrette);
-console.log(domande);
-console.log(errate);
-
-let percentualeCorrette = Math.floor((corrette / domande) * 100);
-let percentualeErrate = Math.floor((errate / domande) * 100);
-console.log(percentualeCorrette);
-
-let corrette_perc = document.querySelector("#corrette h3");
-let corrette_numero = document.querySelector("#corrette p");
-
-let errate_perc = document.querySelector("#errate h3");
-let errate_numero = document.querySelector("#errate p");
-
-corrette_perc.innerHTML = percentualeCorrette + "%";
-errate_perc.innerHTML = percentualeErrate + "%";
-
-corrette_numero.innerHTML = `${corrette}/${domande}` + " Question";
-errate_numero.innerHTML = `${errate}/${domande}` + " Question";
-let testo = "";
+let perc_corrette = Math.floor((corrette / domande) * 100);
+let perc_errate = Math.floor((errate / domande) * 100);
 let testo_risultato = document.getElementById("testo_doughnut");
+let h3_corrette = document.querySelector("#corrette h3");
+let p_corrette = document.querySelector("#corrette p");
+let h3_errate = document.querySelector("#errate h3");
+let p_errate = document.querySelector("#errate p");
+let testo;
 
 creaGrafico();
-cambiaTesto();
+cambiaTesti();
 
-function cambiaTesto() {
-  if (percentualeCorrette >= 60) {
+function cambiaTesti() {
+  h3_corrette.innerHTML = perc_corrette + "%";
+  h3_errate.innerHTML = perc_errate + "%";
+
+  p_corrette.innerHTML = `${corrette}/${domande}` + " Question";
+  p_errate.innerHTML = `${errate}/${domande}` + " Question";
+  if (perc_corrette >= 60) {
     testo = " Congratulazioni";
   } else {
     testo = "Mi dispiace";
@@ -41,7 +35,7 @@ function cambiaTesto() {
 function creaGrafico() {
   let myCanvas = document.querySelector("#myCanvas").getContext("2d");
   let myLabels = ["Wrong", "Correct"];
-  let myData = [errate, corrette];
+  let myData = [perc_errate, perc_corrette];
 
   let chart = new Chart(myCanvas, {
     type: "doughnut",
