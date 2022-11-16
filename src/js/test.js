@@ -1,4 +1,4 @@
-let quantita = 3;
+let quantita = 5;
 let livello = "easy";
 let domande = [];
 let completa = true;
@@ -27,8 +27,8 @@ fetch(
       const runTimer = () => {
         timerId = window.setTimeout(() => {
           avvia_costruttore();
-          // i++
-        }, y * 3000);
+
+        }, y * 32000);
       };
       runTimer();
 
@@ -37,6 +37,7 @@ fetch(
         question.innerHTML = `Question ${i + 1}/${domande.length}`;
         i++;
         console.log(i);
+        timerG();
       }
     }
 
