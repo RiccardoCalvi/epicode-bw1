@@ -279,10 +279,14 @@ div#timercontainer {
   font-size: 3rem;
 }
 
-.prova {
+.livello_selezionato {
   box-shadow: 0px 0px 20px #00fff0;
 }
 
 .viola {
   color: #d20094;
+}
+
+b {
+  font-weight: 600;
 }
