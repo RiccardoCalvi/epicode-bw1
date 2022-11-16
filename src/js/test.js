@@ -104,9 +104,7 @@ fetch(
     }
 
     function costruisci(elemento) {
-      document.getElementById("question").innerHTML = `Question ${i + 1}/${
-        domande.length
-      }`;
+      document.getElementById("question").innerHTML = `Question ${i + 1}<span class="viola"> / ${domande.length}</span>`;
       let risposte = [];
 
       titolo.innerHTML = elemento.question;
