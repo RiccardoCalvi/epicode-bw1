@@ -1,6 +1,24 @@
-let quantita = 3;
-let livello = "easy";
+let quantita;
 let punteggio = 0;
+let livello = localStorage.getItem("livello");
+
+switch (livello) {
+  case "easy":
+    quantita = 10
+    break;
+  case "medium":
+    quantita = 15
+    break;
+  case "hard":
+    quantita = 20
+    break;
+    
+    default:
+    quantita = 10
+    livello = "easy"
+    break;
+}
+console.log(livello)
 
 let domande = [];
 let titolo = document.getElementById("titolo_domanda");
@@ -76,7 +94,6 @@ fetch(
       for (const risposta of elemento.incorrect_answers) {
         risposte.push(risposta);
       }
-      console.log(risposte);
 
       // Mescola tutti gli elementi del vettore
       shuffle(risposte);
