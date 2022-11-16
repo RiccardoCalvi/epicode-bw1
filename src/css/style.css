@@ -91,8 +91,7 @@ input {
   display: inline;
   color: white;
   vertical-align: middle;
-  margin-left: 10px
-  ;
+  margin-left: 10px;
 }
 
 #container_pulsanti input[type="button"],
@@ -100,7 +99,7 @@ input {
 #form input[type="button"] {
   border: 0;
   padding: 20px 60px;
-  width: 300px;
+  /* width: 300px; */
   background-color: #00fff0;
   vertical-align: middle;
 }
@@ -129,7 +128,8 @@ input[value] {
 }
 
 #form form input[type="submit"] {
-  margin-left: 40%;
+  float: right;
+  margin-top: -15px;
 }
 
 #titolo_domanda {
