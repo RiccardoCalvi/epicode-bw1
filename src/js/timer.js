@@ -3,7 +3,7 @@ function timerG() {
   var width = 400,
     height = 400,
     timePassed = 0,
-    timeLimit = 30;
+    timeLimit = 10;
   var fields = [{
     value: timeLimit,
     size: timeLimit,
@@ -126,12 +126,7 @@ function timerG() {
     };
   }
 
-  function rimuovi (){
-    let elemento = document.querySelectorAll('svg')
-    console.log(elemento)
-    document.querySelectorAll("svg").forEach(e => e.remove());
-    console.log(elemento)
-  }
-
-
+}
+function rimuovi (){
+  document.querySelectorAll("svg").forEach(e => e.remove());
 }

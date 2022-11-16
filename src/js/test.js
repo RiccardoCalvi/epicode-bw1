@@ -1,4 +1,4 @@
-let quantita = 5;
+let quantita = 3;
 let livello = "easy";
 let domande = [];
 let completa = true;
@@ -22,27 +22,35 @@ fetch(
     let esci = false;
 
     // AVVIA IL TIMER DI TOT SECONDI
-    for (let y = 0; y < domande.length; y++) {
+    for (let y = 0; y <= domande.length; y++) {
       // console.log(domande.length)
       const runTimer = () => {
         timerId = window.setTimeout(() => {
           avvia_costruttore();
-
-        }, y * 32000);
+        }, y * 11000);
       };
       runTimer();
 
       function avvia_costruttore() {
-        costruisci(domande[i]);
-        question.innerHTML = `Question ${i + 1}/${domande.length}`;
-        i++;
-        console.log(i);
-        timerG();
+        if (i < domande.length) {
+          costruisci(domande[i]);
+          question.innerHTML = `Question ${i + 1}/${domande.length}`;
+          i++;
+          //   timerG();
+
+          console.log(i);
+        } else {
+          //   exit();
+          console.log("ESCI");
+        }
       }
     }
 
     function controllaRisposte(risposta, domanda) {
+      // window.clearTimeout(timerId)
+      rimuovi();
       avvia_costruttore();
+      // runTimer()
       if (risposta.innerHTML == domanda.correct_answer) {
         punteggio++;
         console.log(punteggio);
