@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="src/css/reset.css">
-  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/reset.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
   <title>Document</title>
 </head>
 
@@ -43,23 +43,45 @@
       </ul>
     </div>
 
+    <h3 id="livello_selezionato">Livello selezionato</h3>
     <div id="container_pulsanti">
-      <input type="button" value="Facile" onclick='localStorage.setItem("livello", "easy");'>
-      <input type="button" value="Medio" onclick='localStorage.setItem("livello", "medium");'>
-      <input type="button" value="Difficile" onclick='localStorage.setItem("livello", "hard");'>
-      <!-- <input type="button" onclick='localStorage.setItem("livello", "easy");'>Facile</input>
-      <button onclick='localStorage.setItem("livello", "medium");'>Medio</button>
-      <button onclick='localStorage.setItem("livello", "hard");'>Difficile</button> -->
+      <input type="button" value="Facile" onclick='change("easy");' />
+      <input type="button" value="Medio" onclick='change("medium");' />
+      <input type="button" value="Difficile" onclick='change("hard");' />
     </div>
 
     <div id="form">
       <form action="src/components/benchmark.html">
         <input type="checkbox" required />
         <label>I promise to answer myself without help from anyone</label>
-        <input type="submit" value="proceed">
+        <input type="submit" value="proceed" />
       </form>
     </div>
   </main>
+  <script>
+    let select = document.getElementById("livello_selezionato")
+    let difficolta = "easy";
+    window.onload = function () {
+      localStorage.setItem("livello", difficolta);
+      select.innerHTML = `Livello selezionato: Facile`
+    };
+    function change(livello) {
+      localStorage.setItem("livello", livello);
+      switch (livello) {
+        case "easy":
+          select.innerHTML = `Livello selezionato: Facile`
+          break;
+        case "medium":
+          select.innerHTML = `Livello selezionato: Medio`
+          break;
+        case "hard":
+          select.innerHTML = `Livello selezionato: Difficile`
+          break;
+        default:
+          break;
+      }
+    }
+  </script>
 </body>
 
 </html>
