@@ -42,12 +42,10 @@
         <li>This exam will take approx. <b>0-5 minutes.</b></li>
       </ul>
     </div>
-
-    <h3 id="livello_selezionato">Livello selezionato</h3>
     <div id="container_pulsanti">
-      <input type="button" value="Facile" onclick='change("easy");' />
-      <input type="button" value="Medio" onclick='change("medium");' />
-      <input type="button" value="Difficile" onclick='change("hard");' />
+      <input type="button" id="livello_1" value="Facile" onclick='change("easy");' />
+      <input type="button" id="livello_2" value="Medio" onclick='change("medium");' />
+      <input type="button" id="livello_3" value="Difficile" onclick='change("hard");' />
     </div>
 
     <div id="form">
@@ -59,23 +57,32 @@
     </div>
   </main>
   <script>
-    let select = document.getElementById("livello_selezionato")
-    let difficolta = "easy";
+    let pulsante_1 = document.getElementById("livello_1")
+    let pulsante_2 = document.getElementById("livello_2")
+    let pulsante_3 = document.getElementById("livello_3")
+
     window.onload = function () {
-      localStorage.setItem("livello", difficolta);
-      select.innerHTML = `Livello selezionato: Facile`
+      localStorage.setItem("livello", "easy");
+      pulsante_1.classList.add("prova")
     };
+
     function change(livello) {
       localStorage.setItem("livello", livello);
       switch (livello) {
         case "easy":
-          select.innerHTML = `Livello selezionato: Facile`
+          pulsante_1.classList.add("prova")
+          pulsante_2.classList.remove("prova")
+          pulsante_3.classList.remove("prova")
           break;
         case "medium":
-          select.innerHTML = `Livello selezionato: Medio`
+          pulsante_1.classList.remove("prova")
+          pulsante_2.classList.add("prova")
+          pulsante_3.classList.remove("prova")
           break;
         case "hard":
-          select.innerHTML = `Livello selezionato: Difficile`
+          pulsante_1.classList.remove("prova")
+          pulsante_2.classList.remove("prova")
+          pulsante_3.classList.add("prova")
           break;
         default:
           break;
