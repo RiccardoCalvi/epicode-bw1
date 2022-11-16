@@ -27,6 +27,8 @@ let pulsante_2 = document.getElementById("risposta_2");
 let pulsante_3 = document.getElementById("risposta_3");
 let pulsante_4 = document.getElementById("risposta_4");
 let question = document.getElementById("question");
+let corrette_utente = []
+let errate_utente = []
 
 fetch(
   `https://opentdb.com/api.php?amount=${quantita}&category=18&difficulty=${livello}`
@@ -66,8 +68,11 @@ fetch(
       avvia_costruttore();
       // runTimer()
       if (risposta.innerHTML == domanda.correct_answer) {
+        corrette_utente.push(risposta.innerHTML)
         punteggio++;
         console.log(punteggio);
+      } else {
+        errate_utente.push(risposta.innerHTML)
       }
     }
 
@@ -75,6 +80,8 @@ fetch(
       window.location.replace("results.html");
       localStorage.setItem("punteggio", punteggio);
       localStorage.setItem("domande", quantita);
+      localStorage.setItem("corrette", corrette_utente);
+      localStorage.setItem("errate", errate_utente);
     }
 
     function costruisci(elemento) {
