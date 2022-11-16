@@ -14,7 +14,7 @@ font-family: 'Outfit', sans-serif; */
 .stella {
   margin: 35px auto;
   font-size: 60px;
-  color: #152074;
+  color: #0b113b;
 }
 
 .stella.piena {
@@ -69,9 +69,8 @@ li {
   list-style: disc;
 }
 
-input {
+/*input {
   /* margin-top: 90px; */
-}
 
 #form input[type="checkbox"] {
   border: 2px solid white;
@@ -91,7 +90,8 @@ input {
   display: inline;
   color: white;
   vertical-align: middle;
-  margin-left: 10px;
+  margin-left: 10px
+  ;
 }
 
 #container_pulsanti input[type="button"],
@@ -99,7 +99,7 @@ input {
 #form input[type="button"] {
   border: 0;
   padding: 20px 60px;
-  /* width: 300px; */
+  width: 300px;
   background-color: #00fff0;
   vertical-align: middle;
 }
@@ -128,8 +128,7 @@ input[value] {
 }
 
 #form form input[type="submit"] {
-  float: right;
-  margin-top: -15px;
+  margin-left: 40%;
 }
 
 #titolo_domanda {
