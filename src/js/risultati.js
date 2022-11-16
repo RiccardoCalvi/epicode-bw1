@@ -4,11 +4,12 @@ let corrette = localStorage.getItem("punteggio");
 let risposte_corrette = localStorage.getItem("corrette");
 let risposte_errate = localStorage.getItem("errate");
 
+
 // FOR DEBUG
 // let domande = 10;
 // let corrette = 6;
-// let risposte_corrette = ["CIao", true, false, "Pippo"];
-// let risposte_errate = ["addio", false, true, "Mondo"];
+// let risposte_corrette = "ciao, come, stai";
+// let risposte_errate = "ciao";
 
 let errate = domande - corrette;
 let perc_corrette = Math.floor((corrette / domande) * 100);
@@ -18,8 +19,8 @@ let h3_corrette = document.querySelector("#corrette h3");
 let p_corrette = document.querySelector("#corrette p");
 let h3_errate = document.querySelector("#errate h3");
 let p_errate = document.querySelector("#errate p");
-let ul_corrette = document.querySelector("#corrette ul");
-let ul_errate = document.querySelector("#errate ul");
+let ul_corrette = document.querySelector("#corrette");
+let ul_errate = document.querySelector("#errate");
 let testo;
 
 creaGrafico();
@@ -38,17 +39,27 @@ function cambiaTesti() {
   }
   testo_risultato.innerHTML = testo;
 
-  risposte_corrette.forEach((element) => {
-    let li = document.createElement("li");
-    ul_corrette.appendChild(li);
-    li.textContent = element;
-  });
-
-  risposte_errate.forEach((element) => {
-    let li = document.createElement("li");
-    ul_errate.appendChild(li);
-    li.textContent = element;
-  });
+  
+  if (risposte_corrette != "") {
+    let ul = document.createElement("ul");
+    ul_corrette.appendChild(ul);
+    risposte_corrette = risposte_corrette.split(",");
+    risposte_corrette.forEach((element) => {
+      let li = document.createElement("li");
+      ul_corrette.appendChild(li);
+      li.textContent = element;
+    });
+  }
+  if (risposte_errate != "") {
+    let ul = document.createElement("ul");
+    ul_errate.appendChild(ul);
+    risposte_errate = risposte_errate.split(",");
+    risposte_errate.forEach((element) => {
+      let li = document.createElement("li");
+      ul_errate.appendChild(li);
+      li.textContent = element;
+    });
+  }
 }
 
 function creaGrafico() {
