@@ -7,19 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="src/css/reset.css">
   <link rel="stylesheet" href="src/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-
   <title>Document</title>
 </head>
 
@@ -56,13 +43,13 @@
       </ul>
     </div>
 
-    <div>
+    <div id="container_pulsanti">
       <button onclick='localStorage.setItem("livello", "easy");'>Facile</button>
       <button onclick='localStorage.setItem("livello", "medium");'>Medio</button>
       <button onclick='localStorage.setItem("livello", "hard");'>Difficile</button>
     </div>
 
-    <div>
+    <div id="form">
       <form action="src/components/benchmark.html">
         <input type="checkbox" required />
         <label>I promise to answer myself without help from anyone</label>

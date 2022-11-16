@@ -1,75 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@300;400;600&display=swap");
+
+/* font-family: 'Inter', sans-serif;
+font-family: 'Outfit', sans-serif; */
+
 .nascondi {
-    display: none;
+  display: none;
 }
 
-.doughnut{
-    z-index: 1;            /*per ricordarci la sovrapposizione con la scritta*/
+.doughnut {
+  z-index: 1; /*per ricordarci la sovrapposizione con la scritta*/
 }
 
-.stellina{
-    font-size: 60px;
+.stellina {
+  font-size: 60px;
 }
 
 body {
-    background-image: url(../img/bg.jpg);
-    margin-left: 140px;
-    background-size: cover;
-    font-family: "Outfit", sans-serif;
-    width: 100%;
-    height: auto;
-  }
-  
-  img {
-    width: 200px;
-    height: 50px;
-    margin-top: 30px;
-  }
-  
-  h1 {
-    font-size: 60px;
-    color: white;
-    max-width: 350px;
-    font-weight: lighter;
-  }
-  
-  h2 {
-    font-size: 20px;
-    color: #d20094;
-    font-family: "Inter", sans-serif;
-  }
-  
-  .primo {
-    color: white;
-    max-width: 480px;
-  }
-  
-  ul {
-    color: white;
-    max-width: 580px;
-    margin-top: 40px;
-  }
-  li {
-    margin: 5px;
-  }
-  
-  input {
-    margin-top: 90px;
-    border: 2px solid white;
-    width: 20px;
-    height: 20px;
-    appearance: none;
-  }
-  
-  label {
-    color: white;
-    margin-left: 8px;
-  }
-  
-  button {
-    margin-left: 700px;
-    padding: 15px;
-    width: 200px;
-    background-color: #00fff0;
-    border: 1px solid black;
-    
-  }
+  background-image: url(../img/bg.jpg);
+  margin-left: 140px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Outfit", sans-serif;
+  height: 100vh;
+}
+
+header{
+  padding: 40px 0;
+}
+
+header img {
+  width: 200px;
+}
+
+h1 {
+  font-size: 60px;
+  color: white;
+  max-width: 350px;
+  font-weight: lighter;
+  margin: 30px 0;
+}
+
+h2 {
+  font-size: 20px;
+  color: #d20094;
+  font-family: "Inter", sans-serif;
+  margin: 25px 0;
+}
+
+.primo {
+  color: white;
+  max-width: 480px;
+}
+
+ul {
+  color: white;
+  max-width: 580px;
+  margin-top: 40px;
+}
+li {
+  margin: 5px;
+}
+
+input {
+  margin-top: 90px;
+  border: 2px solid white;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+}
+
+label {
+  color: white;
+  margin-left: 8px;
+}
+
+button {
+  /* margin-left: 700px; */
+  padding: 15px;
+  width: 200px;
+  background-color: #00fff0;
+  border: 1px solid black;
+}
+
+#container_pulsanti{
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+#container_pulsanti button{
+
+  margin: 0 25px;
+}
+
+#form form button{
+  margin-left: 40%;
+}
