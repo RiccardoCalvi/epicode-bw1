@@ -1,16 +1,14 @@
 let quantita = 3;
 let livello = "easy";
+let punteggio = 0;
+
 let domande = [];
-let completa = true;
 let titolo = document.getElementById("titolo_domanda");
-let timer = document.getElementById("timer");
 let pulsante_1 = document.getElementById("risposta_1");
 let pulsante_2 = document.getElementById("risposta_2");
 let pulsante_3 = document.getElementById("risposta_3");
 let pulsante_4 = document.getElementById("risposta_4");
 let question = document.getElementById("question");
-let punteggio = 0;
-var timerId = 0;
 
 fetch(
   `https://opentdb.com/api.php?amount=${quantita}&category=18&difficulty=${livello}`
@@ -36,12 +34,12 @@ fetch(
           costruisci(domande[i]);
           question.innerHTML = `Question ${i + 1}/${domande.length}`;
           i++;
-          //   timerG();
+            timerG();
 
           console.log(i);
         } else {
-          //   exit();
-          console.log("ESCI");
+            exit();
+        //   console.log("ESCI");
         }
       }
     }
