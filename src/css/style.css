@@ -1,29 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;800&family=Outfit:wght@200;300;400;500;600;800&display=swap");
 
-/* font-family: 'Inter', sans-serif;
-font-family: 'Outfit', sans-serif; */
-
-.nascondi {
-  display: none;
-}
-
-.doughnut {
-  z-index: 1; /*per ricordarci la sovrapposizione con la scritta*/
-}
-
-.stella {
-  margin: 35px auto;
-  font-size: 60px;
-  color: #0b113b;
-}
-
-.stella.piena {
-  color: #00fff0;
-}
-
 body {
   background-image: url(../img/bg.jpg);
-  margin: 0 140px;
+  margin: 0 10%;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Outfit", sans-serif;
@@ -36,6 +15,10 @@ header {
 
 header img {
   width: 200px;
+}
+
+b {
+  font-weight: 800;
 }
 
 h1 {
@@ -53,24 +36,31 @@ h2 {
   margin: 35px 0px 10px 0px;
 }
 
-.primo {
-  color: white;
-  max-width: 480px;
-}
-
 ul {
   color: white;
-  /* max-width: 580px;*/
-  margin-top: 40px; 
+  margin-top: 40px;
 }
+
 li {
   margin: 10px;
   margin-left: 25px;
   list-style: disc;
 }
 
-/*input {
-  /* margin-top: 90px; */
+input[value] {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/*
+__        __  _____   _        ____    ___    __  __   _____
+\ \      / / | ____| | |      / ___|  / _ \  |  \/  | | ____|
+\ \ /\ / /  |  _|   | |     | |     | | | | | |\/| | |  _|
+\ V  V /   | |___  | |___  | |___  | |_| | | |  | | | |___
+\_/\_/    |_____| |_____|  \____|  \___/  |_|  |_| |_____|
+
+*/
 
 #form input[type="checkbox"] {
   border: 2px solid white;
@@ -78,8 +68,8 @@ li {
   width: 20px;
   height: 20px;
   vertical-align: middle;
-  
 }
+
 #form input[type="checkbox"]:checked {
   background-color: white;
   /* border: 2px solid #00fff0; */
@@ -90,8 +80,15 @@ li {
   display: inline;
   color: white;
   vertical-align: middle;
-  margin-left: 10px
-  ;
+  margin-left: 10px;
+}
+
+#form {
+  margin-top: 100px;
+}
+
+#form form input[type="submit"] {
+  margin-left: 40%;
 }
 
 #container_pulsanti input[type="button"],
@@ -103,11 +100,7 @@ li {
   background-color: #00fff0;
   vertical-align: middle;
 }
-input[value] {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
+
 #container_pulsanti input[type="button"]:hover,
 #form input[type="submit"]:hover,
 #form input[type="button"]:hover {
@@ -119,17 +112,19 @@ input[value] {
   align-items: center;
   margin-top: 60px;
 }
+
 #container_pulsanti input[type="button"] {
   margin: 0 25px;
 }
 
-#form {
-  margin-top: 100px;
-}
+/*
+  ____    _____   _   _    ____   _   _   __  __      _      ____    _  __
+ | __ )  | ____| | \ | |  / ___| | | | | |  \/  |    / \    |  _ \  | |/ /
+ |  _ \  |  _|   |  \| | | |     | |_| | | |\/| |   / _ \   | |_) | | ' /
+ | |_) | | |___  | |\  | | |___  |  _  | | |  | |  / ___ \  |  _ <  | . \
+ |____/  |_____| |_| \_|  \____| |_| |_| |_|  |_| /_/   \_\ |_| \_\ |_|\_\
 
-#form form input[type="submit"] {
-  margin-left: 40%;
-}
+*/
 
 #titolo_domanda {
   display: block;
@@ -167,6 +162,7 @@ input[value] {
   font-size: 1.1rem;
   font-weight: 500;
 }
+
 #pulsanti button:hover {
   background: linear-gradient(#d20094, #d200939b, #d2009350);
 }
@@ -180,6 +176,31 @@ input[value] {
   font-size: 1.2rem;
 }
 
+#timercontainer {
+  display: block;
+  margin-top: -120px;
+  text-transform: uppercase;
+  float: right;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  width: 80px;
+}
+
+#timercontainer #timer {
+  text-align: center;
+  font-size: 3rem;
+}
+
+/*
+  ____    _____   ____    _   _   _       _____   ____
+ |  _ \  | ____| / ___|  | | | | | |     |_   _| / ___|
+ | |_) | |  _|   \___ \  | | | | | |       | |   \___ \
+ |  _ <  | |___   ___) | | |_| | | |___    | |    ___) |
+ |_| \_\ |_____| |____/   \___/  |_____|   |_|   |____/
+
+*/
+
 #results h1 {
   margin: 100px auto -15px auto;
   font-weight: 600;
@@ -189,14 +210,10 @@ input[value] {
   color: white;
 }
 
-.centra {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
 #errate {
   text-align: end;
 }
+
 #container {
   display: flex;
   justify-content: space-evenly;
@@ -210,6 +227,7 @@ input[value] {
   font-weight: 400;
   margin: 0;
 }
+
 #container h3 {
   color: white;
   font-size: 3rem;
@@ -232,11 +250,21 @@ input[value] {
   color: white;
   font-weight: 600;
 }
+
 #rate input[type="button"]:hover {
   box-shadow: 0px 0px 20px #00fff0;
 
   background-color: #00000010;
 }
+
+/*
+  _____   _____   _____   ____    ____       _       ____   _  __
+ |  ___| | ____| | ____| |  _ \  | __ )     / \     / ___| | |/ /
+ | |_    |  _|   |  _|   | | | | |  _ \    / _ \   | |     | ' /
+ |  _|   | |___  | |___  | |_| | | |_) |  / ___ \  | |___  | . \
+ |_|     |_____| |_____| |____/  |____/  /_/   \_\  \____| |_|\_\
+
+*/
 
 #feedback h1 {
   margin: 100px auto 0px auto;
@@ -251,18 +279,6 @@ input[value] {
   max-width: 800px;
 }
 
-#form input[type="text"] {
-  border: 0px;
-  border-bottom: 1px solid #d20094;
-  width: 45%;
-  background-color: transparent;
-  margin: 45px auto;
-  padding: 10px 20px;
-}
-#form input[type="text"]:defined {
-  color: white;
-}
-
 #feedback #form input[type="button"] {
   display: block;
   margin: 0 auto;
@@ -270,30 +286,62 @@ input[value] {
   padding: 15px 40px;
 }
 
-div#timercontainer {
-  display: block;
-  margin-top: -120px;
-  text-transform: uppercase;
-  float: right;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 300;
-  width: 80px;
+#feedback #form input[type="text"] {
+  border: 0px;
+  border-bottom: 1px solid #d20094;
+  width: 45%;
+  background-color: transparent;
+  margin: 45px auto;
+  padding: 10px 20px;
 }
 
-#timercontainer #timer {
-  text-align: center;
-  font-size: 3rem;
+#feedback #form input[type="text"]:defined {
+  color: white;
 }
+
+/*
+   ____   _          _      ____    ____    ___
+   / ___| | |        / \    / ___|  / ___|  |_ _|
+   | |     | |       / _ \   \___ \  \___ \   | |
+   | |___  | |___   / ___ \   ___) |  ___) |  | |
+   \____| |_____| /_/   \_\ |____/  |____/  |___|
+   
+*/
 
 .livello_selezionato {
   box-shadow: 0px 0px 20px #00fff0;
+}
+
+.centra {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .viola {
   color: #d20094;
 }
 
-b{
-  font-weight: 800;
+.nascondi {
+  display: none;
+}
+
+.doughnut {
+  z-index: 1;
+  /*per ricordarci la sovrapposizione con la scritta*/
+}
+
+.stella {
+  margin: 35px auto;
+  font-size: 60px;
+  color: #0b113b;
+}
+
+.stella.piena {
+  color: #00fff0;
+}
+
+.primo {
+  color: white;
+  max-width: 480px;
 }
