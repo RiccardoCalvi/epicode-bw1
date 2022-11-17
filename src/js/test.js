@@ -37,7 +37,7 @@ fetch(
   .then((domande) => {
     domande = domande.results;
     let i = 0;
-    var tempo = 30;
+    var tempo = 5;
     var timer = tempo;
     let interval;
 
@@ -48,17 +48,19 @@ fetch(
       interval = setInterval(function () {
         document.getElementById("timer").innerHTML = timer;
 
-        if (i >= domande.length) exit();
-
-        if (timer === 0) {
-          clearInterval(interval);
-          timer = tempo;
-          i++;
-          avviaTimer();
-          costruisci(domande[i]);
+        if (i >= domande.length) {
+          exit();
+        } else {
+          if (timer === 0) {
+            clearInterval(interval);
+            timer = tempo;
+            i++;
+            avviaTimer();
+            costruisci(domande[i]);
+          }
+          timer--;
+          checkPulsanti();
         }
-        timer--;
-        checkPulsanti();
       }, 1000);
     }
 
@@ -67,7 +69,7 @@ fetch(
         corrette_utente.push(risposta.innerHTML);
         punteggio++;
       } else {
-        errate_utente.push(risposta.innerHTML);
+        errate_utente.push(domanda.correct_answer);
       }
 
       if (i >= domande.length) {
@@ -105,7 +107,14 @@ fetch(
     }
 
     function costruisci(elemento) {
-      document.getElementById("question").innerHTML = `Question ${i + 1}<span class="viola"> / ${domande.length}</span>`;
+      if (i === domande.length) {
+        document.getElementById(
+          "question"
+        ).innerHTML = `Question ${i}<span class="viola"> / ${domande.length}</span>`;
+      } else {
+        document.getElementById("question").innerHTML = `Question ${i + 1
+          }<span class="viola"> / ${domande.length}</span>`;
+      }
       let risposte = [];
 
       titolo.innerHTML = elemento.question;
