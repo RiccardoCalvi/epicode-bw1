@@ -120,7 +120,7 @@ fetch(
       titolo.innerHTML = elemento.question;
 
       risposte.push(elemento.correct_answer);
-      console.log(elemento.correct_answer);
+
       for (const risposta of elemento.incorrect_answers) {
         risposte.push(risposta);
       }
