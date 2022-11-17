@@ -6,7 +6,7 @@ body {
   /*background-repeat: no-repeat;*/
   font-family: "Outfit", sans-serif;
   /*height: 100vh;*/
-  padding: 0 100px;
+  padding: 0 ;
 }
 
 header {
@@ -69,6 +69,9 @@ __        __  _____   _        ____    ___    __  __   _____
 \_/\_/    |_____| |_____|  \____|  \___/  |_|  |_| |_____|
 
 */
+#indexBody{
+  padding:0 100px;
+}
 
 #form input[type="checkbox"] {
   border: 2px solid white;
@@ -134,6 +137,9 @@ __        __  _____   _        ____    ___    __  __   _____
  |____/  |_____| |_| \_|  \____| |_| |_| |_|  |_| /_/   \_\ |_| \_\ |_|\_\
 
 */
+#benchmark{
+  padding: 0 100px;
+}
 
 #titolo_domanda {
   display: block;
@@ -208,6 +214,9 @@ __        __  _____   _        ____    ___    __  __   _____
  |_| \_\ |_____| |____/   \___/  |_____|   |_|   |____/
 
 */
+.results{
+  margin:0 ;
+} 
 
 #results h1 {
   margin: -25px auto 0px auto;
@@ -225,9 +234,6 @@ __        __  _____   _        ____    ___    __  __   _____
   color: white;
 }
 
-#errate {
-  text-align: end;
-}
 
 #container {
 
@@ -235,6 +241,12 @@ display: flex;
 justify-content: space-around;
   align-items: center;
   margin-top: 100px;
+ 
+}
+#errate {
+  text-align: end;
+
+
 }
 
 #container h2 {
@@ -271,6 +283,7 @@ justify-content: space-around;
   box-shadow: 0px 0px 20px #00fff0;
 
   background-color: #00000010;
+
 }
 
 /*
@@ -281,7 +294,9 @@ justify-content: space-around;
  |_|     |_____| |_____| |____/  |____/  /_/   \_\  \____| |_|\_\
 
 */
-
+#feedback{
+  padding :0 100px
+}
 #feedback h1 {
   margin: 100px auto 0px auto;
   font-weight: 600;
@@ -334,7 +349,7 @@ justify-content: space-around;
 
 .centra {
   display: block;
-  margin: 0 auto;
+  margin: 30px 0 auto ;
   text-align: center;
 }
 
