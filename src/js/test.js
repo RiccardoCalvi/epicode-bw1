@@ -77,9 +77,10 @@ fetch(
         costruisci(domande[i]);
       }
       clearInterval(interval);
-      avviaTimer();
       timer = tempo;
+      avviaTimer();
     }
+
     function checkPulsanti() {
       pulsante_1.onclick = () => {
         controllaRisposte(pulsante_1, domande[i]);
@@ -110,12 +111,12 @@ fetch(
       titolo.innerHTML = elemento.question;
 
       risposte.push(elemento.correct_answer);
-      console.log(risposte);
+      console.log(elemento.correct_answer);
       for (const risposta of elemento.incorrect_answers) {
         risposte.push(risposta);
       }
 
-      // shuffle(risposte);
+      shuffle(risposte);
 
       elemento.type == "boolean"
         ? quanti_pulsanti(risposte, true)
@@ -144,14 +145,5 @@ fetch(
         [array[i], array[random]] = [array[random], array[i]];
       }
       return array;
-    }
-
-    function setCircleDasharray() {
-      const circleDasharray = `${(
-        calculateTimeFraction() * FULL_DASH_ARRAY
-      ).toFixed(0)} 283`;
-      document
-        .getElementById("base-timer-path-remaining")
-        .setAttribute("stroke-dasharray", circleDasharray);
     }
   });
