@@ -88,7 +88,8 @@ __        __  _____   _        ____    ___    __  __   _____
 }
 
 #form form input[type="submit"] {
-  margin-left: 40%;
+  float: right;
+  margin-top: -15px
 }
 
 #container_pulsanti input[type="button"],
