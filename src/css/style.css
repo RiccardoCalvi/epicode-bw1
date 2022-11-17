@@ -221,11 +221,7 @@ __        __  _____   _        ____    ___    __  __   _____
 }
 
 #testo_doughnut {
-  
-  display: flex;
-  justify-content: center;
-  left: 0;
-  align-items: center;
+ 
   color: white;
 }
 
@@ -234,8 +230,9 @@ __        __  _____   _        ____    ___    __  __   _____
 }
 
 #container {
-  display: flexbox;
-  /*justify-content: space-evenly;*/
+
+display: flex;
+justify-content: space-around;
   align-items: center;
   margin-top: 100px;
 }

@@ -35,7 +35,7 @@ function cambiaTesti() {
   if (perc_corrette >= 60) {
     testo = " Congratulazioni";
   } else {
-    testo = "Mi dispiace";
+    testo = "Mi dispiace, molto ";
   }
   testo_risultato.innerHTML = testo;
 
