@@ -25,8 +25,8 @@ h1 {
   font-size: 4rem;
   color: white;
   max-width: 350px;
-  font-weight: lighter;
   margin: 30px 0;
+  font-weight: 400;
 }
 
 h2 {
@@ -136,14 +136,15 @@ __        __  _____   _        ____    ___    __  __   _____
 
 #pulsanti {
   height: 250px;
-  display: flex;
+
+  /* display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: fixed;
   top: 55%;
   left: 24%;
-  z-index: 3;
+  z-index: 3; */
 }
 
 #pulsanti button {
@@ -168,9 +169,7 @@ __        __  _____   _        ____    ___    __  __   _____
 }
 
 #question {
-  position: fixed;
-  top: 90%;
-  left: 47%;
+  float: inline-end;
   text-transform: uppercase;
   color: white;
   font-size: 1.2rem;
