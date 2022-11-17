@@ -80,6 +80,10 @@ function creaGrafico() {
           hoverBorderWidth: 1,
           hoverOffset: 2,
           cutout: "70%",
+          borderColor: '#00000000',
+          
+          
+
         },
       ],
     },

@@ -3,9 +3,9 @@
 body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;*/
   font-family: "Outfit", sans-serif;
-  height: 100vh;
+  /*height: 100vh;*/
   padding: 0 100px;
 }
 
@@ -97,7 +97,7 @@ __        __  _____   _        ____    ___    __  __   _____
 
 #form form input[type="submit"] {
   float: right;
-  margin-top: -15px
+  margin-top: -15px;
 }
 
 #container_pulsanti input[type="button"],
@@ -167,14 +167,13 @@ __        __  _____   _        ____    ___    __  __   _____
   background: linear-gradient(#d20094, #d200939b, #d2009350);
 }
 
-#question_counter{
+#question_counter {
   bottom: 20px;
   left: 0;
   position: fixed;
   text-align: center;
   width: 100%;
 }
-
 
 #question {
   height: 100px;
@@ -211,11 +210,22 @@ __        __  _____   _        ____    ___    __  __   _____
 */
 
 #results h1 {
-  margin: 100px auto -15px auto;
+  margin: -25px auto 0px auto;
   font-weight: 600;
 }
 
 #results p {
+  color: white;
+  font-size: 2rem;
+  margin-top: -10px;
+}
+
+#testo_doughnut {
+  
+  display: flex;
+  justify-content: center;
+  left: 0;
+  align-items: center;
   color: white;
 }
 
@@ -224,8 +234,8 @@ __        __  _____   _        ____    ___    __  __   _____
 }
 
 #container {
-  display: flex;
-  justify-content: space-evenly;
+  display: flexbox;
+  /*justify-content: space-evenly;*/
   align-items: center;
   margin-top: 100px;
 }
@@ -341,8 +351,15 @@ __        __  _____   _        ____    ___    __  __   _____
 
 .doughnut {
   z-index: 1;
+  width: 450px;
+  display: flex;
+ 
+  justify-content: start;
+  position: absolute;
+
   /*per ricordarci la sovrapposizione con la scritta*/
 }
+
 
 .stella {
   margin: 35px 8px;
