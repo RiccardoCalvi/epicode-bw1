@@ -37,7 +37,7 @@ fetch(
   .then((domande) => {
     domande = domande.results;
     let i = 0;
-    var tempo = 5;
+    var tempo = 30;
     var timer = tempo;
     let interval;
 
