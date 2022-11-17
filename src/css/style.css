@@ -214,6 +214,9 @@ __        __  _____   _        ____    ___    __  __   _____
  |_| \_\ |_____| |____/   \___/  |_____|   |_|   |____/
 
 */
+#resultheader{
+  padding: 25px 100px ;
+}
 .results{
   margin:0 ;
 } 
@@ -245,7 +248,7 @@ justify-content: space-around;
 }
 #errate {
   text-align: end;
-
+margin-left: 55%;
 
 }
 
