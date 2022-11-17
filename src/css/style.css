@@ -374,7 +374,12 @@ margin-left: 55%;
 
   /*per ricordarci la sovrapposizione con la scritta*/
 }
-
+ li{
+  color:white;
+  display: flex;
+  align-items: column;
+  
+ }
 
 .stella {
   margin: 35px 8px;
