@@ -9,10 +9,6 @@ body {
   padding: 0;
 }
 
-br {
-  margin-bottom: 20px;
-}
-
 header {
   padding: 40px 0;
 }
@@ -22,7 +18,7 @@ header img {
 }
 
 b {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 h1 {
@@ -58,7 +54,6 @@ li {
   list-style: disc;
   color: white;
   text-align: start;
-  max-width: 250px;
 }
 
 
@@ -238,6 +233,7 @@ __        __  _____   _        ____    ___    __  __   _____
   margin-top: -10px;
 }
 
+
 #testo_doughnut {
   color: white;
   position: relative;
@@ -386,12 +382,6 @@ __        __  _____   _        ____    ___    __  __   _____
   width: 450px;
   position: relative;
   left: 20px;
-}
-
-li {
-  color: white;
-  display: flex;
-  align-items: column;
 }
 
 .stella {
