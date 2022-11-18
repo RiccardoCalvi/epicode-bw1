@@ -249,6 +249,10 @@ __        __  _____   _        ____    ___    __  __   _____
   font-size: 22px;
 }
 
+.sub_text{
+  padding-top: 35px ;
+}
+
 #container {
   display: flex;
   justify-content: space-evenly;
@@ -406,4 +410,5 @@ li {
 }
 .celeste {
   color: #00fff0;
+  padding-bottom: 20px;
 }
