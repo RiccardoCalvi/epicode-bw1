@@ -56,7 +56,6 @@ li {
   text-align: start;
 }
 
-
 input[value] {
   font-size: 16px;
   font-weight: 600;
@@ -233,7 +232,6 @@ __        __  _____   _        ____    ___    __  __   _____
   margin-top: -10px;
 }
 
-
 #testo_doughnut {
   color: white;
   position: relative;
@@ -245,8 +243,8 @@ __        __  _____   _        ____    ___    __  __   _____
   font-size: 22px;
 }
 
-.sub_text{
-  padding-top: 35px ;
+.sub_text {
+  padding-top: 35px;
 }
 
 #container {
