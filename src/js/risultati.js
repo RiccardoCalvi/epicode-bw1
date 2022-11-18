@@ -33,9 +33,10 @@ function cambiaTesti() {
   p_corrette.innerHTML = `${corrette}/${domande}` + " Question";
   p_errate.innerHTML = `${errate}/${domande}` + " Question";
   if (perc_corrette >= 60) {
-    testo = " Congratulazioni";
+    testo = 'Congratulazioni! <br> <span class="celeste">hai supertato il test.</span> <br> Riceverai un certificato entro pochi minuti. Controlla la tua mail';
   } else {
-    testo = "Mi dispiace, molto ";
+    testo = 'Congratulazioni! <br> <span class="celeste">hai supertato il test.</span> <br> Riceverai un certificato entro pochi minuti. Controlla la tua mail';
+    // testo = 'Ohhh No! <br> <span class="celeste">Purtroppo non hai supertato il test.</span>';
   }
   testo_risultato.innerHTML = testo;
 
