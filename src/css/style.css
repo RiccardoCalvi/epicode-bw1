@@ -3,10 +3,10 @@
 body {
   background-image: url(../img/bg.jpg);
   background-size: cover;
-  /*background-repeat: no-repeat;*/
+  background-repeat: no-repeat;
   font-family: "Outfit", sans-serif;
-  /*height: 100vh;*/
-  padding: 0 ;
+  height: 100vh;
+  padding: 0;
 }
 
 header {
@@ -69,8 +69,8 @@ __        __  _____   _        ____    ___    __  __   _____
 \_/\_/    |_____| |_____|  \____|  \___/  |_|  |_| |_____|
 
 */
-#indexBody{
-  padding:0 100px;
+#indexBody {
+  padding: 0 100px;
 }
 
 #form input[type="checkbox"] {
@@ -137,7 +137,7 @@ __        __  _____   _        ____    ___    __  __   _____
  |____/  |_____| |_| \_|  \____| |_| |_| |_|  |_| /_/   \_\ |_| \_\ |_|\_\
 
 */
-#benchmark{
+#benchmark {
   padding: 0 100px;
 }
 
@@ -174,17 +174,11 @@ __        __  _____   _        ____    ___    __  __   _____
 }
 
 #question_counter {
-  bottom: 20px;
-  left: 0;
-  position: fixed;
-  text-align: center;
-  width: 100%;
+  margin-top: 100px;
 }
 
 #question {
-  height: 100px;
-  margin: auto;
-  width: 400px;
+
   text-transform: uppercase;
   color: white;
   font-size: 1.2rem;
@@ -214,12 +208,9 @@ __        __  _____   _        ____    ___    __  __   _____
  |_| \_\ |_____| |____/   \___/  |_____|   |_|   |____/
 
 */
-#resultheader{
-  padding: 25px 100px ;
+#resultheader {
+  padding: 25px 100px;
 }
-.results{
-  margin:0 ;
-} 
 
 #results h1 {
   margin: -25px auto 0px auto;
@@ -233,23 +224,21 @@ __        __  _____   _        ____    ___    __  __   _____
 }
 
 #testo_doughnut {
- 
   color: white;
+  position: relative;
+  top: -300px;
+  left: 160px
 }
-
 
 #container {
-
-display: flex;
-justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   margin-top: 100px;
- 
 }
+
 #errate {
   text-align: end;
-margin-left: 55%;
-
 }
 
 #container h2 {
@@ -274,7 +263,7 @@ margin-left: 55%;
 }
 
 #rate input[type="button"] {
-  margin-top: 60px;
+  margin: 60px 0 0 100px 0;
   border: 2px solid white;
   padding: 15px 50px;
   background-color: #00000010;
@@ -286,8 +275,8 @@ margin-left: 55%;
   box-shadow: 0px 0px 20px #00fff0;
 
   background-color: #00000010;
-
 }
+
 
 /*
   _____   _____   _____   ____    ____       _       ____   _  __
@@ -297,14 +286,16 @@ margin-left: 55%;
  |_|     |_____| |_____| |____/  |____/  /_/   \_\  \____| |_|\_\
 
 */
-#feedback{
-  padding :0 100px
+#feedback {
+  padding: 0 100px;
 }
+
 #feedback h1 {
   margin: 100px auto 0px auto;
   font-weight: 600;
   max-width: 800px;
 }
+
 
 #feedback p {
   color: white;
@@ -352,7 +343,7 @@ margin-left: 55%;
 
 .centra {
   display: block;
-  margin: 30px 0 auto ;
+  margin: 30px 0 auto;
   text-align: center;
 }
 
@@ -367,19 +358,14 @@ margin-left: 55%;
 .doughnut {
   z-index: 1;
   width: 450px;
-  display: flex;
- 
-  justify-content: start;
-  position: absolute;
 
-  /*per ricordarci la sovrapposizione con la scritta*/
 }
- li{
-  color:white;
+
+li {
+  color: white;
   display: flex;
   align-items: column;
-  
- }
+}
 
 .stella {
   margin: 35px 8px;
